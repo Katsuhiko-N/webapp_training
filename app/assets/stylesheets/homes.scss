@@ -1,0 +1,39 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+#loading_image{
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    text-align: center;
+}
+
+#l_bar{
+    position: relative;
+    top: 100px;
+    margin-left: 15%;
+    height: 10px;
+    width: 70%;
+    background-color: green;
+}
+
+.hide{
+    transition: 1s;
+    visibility: hidden;
+    opacity: 0;
+}
+
+ .l_title{
+    color: white;
+    padding: 20px 0;
+ }
+ 
+ #contents{
+     width: 100%;
+     height: 100%;
+ }
