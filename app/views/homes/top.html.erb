@@ -1,15 +1,19 @@
 <!--ローディング画面-->
-<div id="loading_image">
+<div id="loading_image_top">
     <h1 class="l_title">Now loading...</h1>
     <div id="l_bar"></div>
 </div>
 
 
 <!--コンテンツ部分-->
-<div id="contents" class="hide">
+<div id="contents" class="hide_top">
     <h1>実験ページ：トップ</h1>
     
-    
+    <div>
+        <%= link_to black_jack_path do %>
+            <div>"ブラックジャックはこちら"</div>
+        <% end %>
+    </div>
     
 </div>
 

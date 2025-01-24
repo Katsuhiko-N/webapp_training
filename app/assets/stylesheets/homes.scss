@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-#loading_image{
+// 以下トップページ
+#loading_image_top{
     background-color: black;
     position: fixed;
     top: 0;
@@ -13,6 +14,11 @@
     text-align: center;
 }
 
+ #contents{
+     width: 100%;
+     height: 100%;
+ }
+
 #l_bar{
     position: relative;
     top: 100px;
@@ -22,18 +28,44 @@
     background-color: green;
 }
 
-.hide{
+.hide_top{
     transition: 1s;
     visibility: hidden;
     opacity: 0;
 }
 
- .l_title{
+.l_title{
     color: white;
     padding: 20px 0;
  }
  
- #contents{
-     width: 100%;
-     height: 100%;
- }
+ 
+ 
+//  以下ブラックジャック
+#game{
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+    height: 400px;
+}
+
+#d_area{
+    background-color: green;
+}
+
+#p_area{
+    background-color: skyblue;
+    margin-bottom: 10px;
+}
+
+.area{
+    margin: 0 auto;
+    width: 400px;
+    height: 80px;
+    color: white;
+    font-size: 18px;
+}
+
+.hide{
+    display: none;
+}

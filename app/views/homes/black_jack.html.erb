@@ -1,0 +1,37 @@
+<!--コンテンツ部分-->
+<div id="contents">
+    <%= link_to "Topに戻る", root_path %>
+    <h1>実験ページ：ブラックジャック</h1>
+    <p>説明：カードの合計値が21に近いほうが勝ち。21を超えると失格。</p>
+    <p>説明：エリアの下部に引かれたカードの数字が表示されます。</p>
+    <div id="game">
+        <div id="d_area" class="area">
+            <p>ディーラーエリア<span id="d_win"></span></p>
+            <p id="d_card"></p>
+            <p id="d_info"></p>
+        </div>
+        <div>VS</div>
+        <div id="p_area" class="area">
+            <p>プレイヤーエリア<span id="p_win"></span></p>
+            <p id="p_card"></p>
+            <p id="p_info"></p>
+        </div>
+        
+        <p id="info">ゲームを開始するには開始ボタンをクリック</p>
+        
+        <div id="p_start">
+            <button id="btn_st">開始</button>
+        </div>
+        
+        <div id="p_select" class="hide">
+            <button id="btn_hit">ヒットする</button>
+            <button id="btn_ck">チェックする</button>
+        </div>
+        
+        <button id="btn_reset" class="hide">リセットする</button>
+    </div>
+    
+</div>
+
+<!--jsは最後に読み込まないとエラー-->
+<%= javascript_pack_tag 'scripts/bj_script.js' %>

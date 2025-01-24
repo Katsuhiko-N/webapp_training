@@ -1,4 +1,4 @@
-const loading_image = document.querySelector('#loading_image');
+const loading_image = document.querySelector('#loading_image_top');
 const l_bar = document.querySelector('#l_bar');
 
 const contents = document.querySelector('#contents');
@@ -14,12 +14,10 @@ const l_option = {
   duration: 300
 };
 
-// 画面の読み込み後、指定時間後に画面表示
-window.addEventListener('load', () => {
-    
+if(contents.classList.contains('hide_top')){
     l_bar.animate(keyframe_bar,l_option);
     window.setTimeout(() =>{
-        contents.classList.remove('hide');
-        loading_image.classList.add('hide');
+        contents.classList.remove('hide_top');
+        loading_image.classList.add('hide_top');
     },500);
-});
+}
