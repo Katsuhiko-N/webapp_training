@@ -46,31 +46,45 @@ const game = () => {
         }
     };
     
+    // 各結果の関数
+    const win = () => {
+        info.textContent = "あなたの勝ちです";
+        btn_reset.classList.remove('hide');
+        p_select.classList.add('hide');
+        p_win_total++;
+        p_win.textContent = `　勝利数${p_win_total}回`;
+    };
+    
+    const draw_game = () => {
+        info.textContent = "引き分けです";
+        btn_reset.classList.remove('hide');
+        p_select.classList.add('hide');
+    };
+    
+    const lose = () => {
+        info.textContent = "あなたの負けです";
+        btn_reset.classList.remove('hide');
+        p_select.classList.add('hide');
+        d_win_total++;
+        d_win.textContent = `　勝利数${d_win_total}回`;
+    };
+    
     // 勝負関数
     const battle = (p_card_total, d_card_total) => {
         if(d_card_total > 21){
-            info.textContent = "あなたの勝ちです";
-            btn_reset.classList.remove('hide');
-            p_win_total++;
-            p_win.textContent = `勝利数${p_win_total}回`;
+            win();
         }else{
             if(p_card_total > d_card_total){
-                info.textContent = "あなたの勝ちです";
-                btn_reset.classList.remove('hide');
-                p_win_total++;
-                p_win.textContent = `　勝利数${p_win_total}回`;
+                win();
             }else if(p_card_total == d_card_total){
-                info.textContent = "引き分けです";
-                btn_reset.classList.remove('hide');
+                draw_game();
             }else{
-                info.textContent = "あなたの負けです";
-                btn_reset.classList.remove('hide');
-                d_win_total++;
-                d_win.textContent = `　勝利数${d_win_total}回`;
+                lose();
             }
         }
     };
     
+    // 以下ゲーム本編
     // ディーラーの最初の2枚
     for(let i = 0; i < 2; i++){
         dc = draw(dc_total);
@@ -92,16 +106,9 @@ const game = () => {
         pc_total = pc_total + pc;
         p_info.textContent = '合計は ' + `${pc_total}` + ' です';
         if(dc_total > pc_total){
-            info.textContent = "あなたの負けです";
-            d_win_total++;
-            d_win.textContent = `　勝利数${d_win_total}回`;
-            btn_reset.classList.remove('hide');
-            p_select.classList.add('hide');
+            lose();
         }else{
-            info.textContent = "引き分けです";
-            btn_reset.classList.remove('hide');
-            btn_reset.classList.remove('hide');
-            p_select.classList.add('hide');
+            draw_game();
         }
     }
     
@@ -114,11 +121,7 @@ const game = () => {
         p_info.textContent = '合計は ' + `${pc_total}` + ' です';
         
         if(pc_total > 21){
-            info.textContent = "21を超えました。あなたの負けです";
-            d_win_total++;
-            d_win.textContent = `　勝利数${d_win_total}回`;
-            btn_reset.classList.remove('hide');
-            p_select.classList.add('hide');
+            lose();
         }else if(pc_total == 21){
             p_select.classList.add('hide');
             while(dc_total < 16){
