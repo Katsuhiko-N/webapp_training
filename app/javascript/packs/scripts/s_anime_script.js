@@ -1,17 +1,27 @@
-const sa_image = document.querySelector('#sa_image');
+const sa_image = document.querySelector('.sa_image');
 
 
 // スクロール量＋画面高さ＝画面の下端の高さ
 
-//スクロール量を取得
-let scroll = window.scrollY;
 //ページの高さを取得
-let windowHeight = window.documentElement.clientHeight;
+const windowHeight = document.documentElement.clientHeight;
+console.log(`ページの高さ=${windowHeight}`);
 //ターゲット要素の高さを取得
-let targetPos = sa_image.getBoundingClientRect().top;
+const targetPos = sa_image.getBoundingClientRect().top;
+console.log(`ターゲットの高さ=${targetPos}`);
 
-if(targetPos > scroll + windowHeight){
-    sa_image.classList.add('anime01');
-}
+const getscroll = () => {
+    //スクロール量を取得
+    const scroll = window.scrollY;
+    console.log(`スクロール量=${scroll}`);
+    
+    if(scroll + windowHeight > targetPos){
+        sa_image.classList.add('anime01');
+    }else{
+        sa_image.classList.remove('anime01');
+    }
+};
+
+window.addEventListener('scroll',getscroll);
 
 
