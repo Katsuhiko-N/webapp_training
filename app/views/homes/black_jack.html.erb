@@ -1,3 +1,5 @@
+<%= javascript_pack_tag 'scripts/bj_script.js', defer: true %>
+
 <!--コンテンツ部分-->
 <div id="contents">
     <%= link_to "Topに戻る", root_path %>
@@ -32,6 +34,3 @@
     </div>
     
 </div>
-
-<!--jsは最後に読み込まないとエラー-->
-<%= javascript_pack_tag 'scripts/bj_script.js' %>

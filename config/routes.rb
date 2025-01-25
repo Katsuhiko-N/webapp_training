@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root to: 'homes#top'
   
   get 'black_jack' => 'homes#black_jack', as: "black_jack"
+  get 'scroll_anime' => 'homes#scroll_anime', as: "scroll_anime"
   
 end

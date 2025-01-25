@@ -6,4 +6,7 @@ class HomesController < ApplicationController
     def black_jack
     end
     
+    def scroll_anime
+    end
+    
 end
