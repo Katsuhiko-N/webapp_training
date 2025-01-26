@@ -78,11 +78,13 @@
     text-align: center;
 }
 
-.scroll_info{
-    margin-bottom: 500px;
+.space{
+    margin-top: 200px;
+    margin-bottom: 200px;
 }
 
 .anime01{
+    translate: 0, 100px;
     transform: rotate(90deg);
     transition: 5s;
 }
