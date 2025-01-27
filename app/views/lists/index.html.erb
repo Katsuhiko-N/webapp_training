@@ -1,0 +1,26 @@
+<!--コンテンツ部分-->
+<div id="contents">
+    <h1>実験ページ：List/index</h1>
+    <%= link_to "Topに戻る", root_path %>
+    <div id="list_contents">
+        
+        <%= form_with model: @list, url: lists_path do |f| %>
+        <%= f.text_area :body %>
+        <%= f.submit "送信" %>
+        
+        <% end %>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th></th><th></th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+        
+    </div>
+    
+</div>
