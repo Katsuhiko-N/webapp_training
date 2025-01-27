@@ -14,14 +14,8 @@ import "bootstrap";
 import "../stylesheets/application"; 
 
 // // scssファイル
-// import '../stylesheets/homes.scss';
-// import '../stylesheets/lists.scss';
-
-// // scriptファイル
-// import 'scripts/top_script.js'
-// import 'scripts/bj_script.js'
-// import "scripts/s_anime_script.js";
-// import 'scripts/list_index_script.js'
+import '../stylesheets/homes.scss';
+import '../stylesheets/lists.scss';
 
 Rails.start()
 Turbolinks.start()
