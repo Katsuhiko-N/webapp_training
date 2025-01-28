@@ -1,23 +1,36 @@
+<%= javascript_pack_tag 'scripts/list_index_script.js', defer: true %>
 <!--コンテンツ部分-->
 <div id="contents">
     <h1>実験ページ：List/index</h1>
     <%= link_to "Topに戻る", root_path %>
+    
     <div id="list_contents">
-        
-        <%= form_with model: @list, url: lists_path do |f| %>
-        <%= f.text_area :body %>
-        <%= f.submit "送信" %>
-        
+        <% if @list.errors.any? %>
+            <ul>
+                <% @list.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
         <% end %>
         
-        <table>
+        <%= form_with model: @list, url: lists_path do |f| %>
+            <%= f.text_area :body, id: "input_data" %>
+            <%= f.submit "送信" %>
+        <% end %>
+        
+        
+        <table class="container-fluid">
             <thead>
-                <tr>
-                    <th></th><th></th>
+                <tr class="row-fluid">
+                    <th>保存履歴</th>
                 </tr>
             </thead>
             <tbody>
-                
+                <% @lists.each do |list| %>
+                <tr class="row-fluid">
+                    <td><p><%= list.body %></p></td>
+                </tr>
+                <% end %>
             </tbody>
         </table>
         
