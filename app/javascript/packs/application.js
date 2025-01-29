@@ -11,11 +11,11 @@ import "channels"
 import "jquery";
 import "popper.js";
 import "bootstrap";
-import "../stylesheets/application"; 
+import "../stylesheets/application.scss";
 
-// // scssファイル
-import '../stylesheets/homes.scss';
-import '../stylesheets/lists.scss';
+import "../stylesheets/homes.scss";
+import "../stylesheets/lists.scss";
+
 
 Rails.start()
 Turbolinks.start()

@@ -7,7 +7,7 @@ const contents = document.querySelector('#contents');
 // ローディング画面
 // アニメーション設定
 const keyframe_bar = {
-    width: [0, 100],
+    width: [0, "100px"],
 };
 
 const l_option = {
