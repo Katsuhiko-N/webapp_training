@@ -16,21 +16,19 @@ input_data.addEventListener('keyup', () => {
 });
 
 
-
+// 同じclassを持つ者すべてに適用するには、配列にし、一個一個に適用する
 const color_logs = document.querySelectorAll('.color_log');
-
-
 
 for(let i = 0; i < color_logs.length; i++){
     color_logs[i].addEventListener('click', () => {
-    console.log(color_logs[i].textContent);
-    box.style.backgroundColor = `${color_logs[i].textContent}`;
-    if(box.style.backgroundColor == "transparent"){
-        console.log('この色はありません');
-        color_info.textContent = 'この色はありません';
-    }else{
-        color_info.textContent = '';
-    }
-});
+        console.log(color_logs[i].textContent);
+        box.style.backgroundColor = `${color_logs[i].textContent}`;
+        if(box.style.backgroundColor == "transparent"){
+            console.log('この色はありません');
+            color_info.textContent = 'この色はありません';
+        }else{
+            color_info.textContent = '';
+        }
+    });
 }
 
