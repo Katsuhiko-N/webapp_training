@@ -20,6 +20,7 @@ input_data.addEventListener('keyup', () => {
 const color_logs = document.querySelectorAll('.color_log');
 
 for(let i = 0; i < color_logs.length; i++){
+    color_logs[i].style.borderColor = `${color_logs[i].textContent}`;
     color_logs[i].addEventListener('click', () => {
         console.log(color_logs[i].textContent);
         box.style.backgroundColor = `${color_logs[i].textContent}`;
