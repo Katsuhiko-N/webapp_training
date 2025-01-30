@@ -3,7 +3,8 @@
 <div id="contents">
     <h1>実験ページ：List/index</h1>
     <%= link_to "Topに戻る", root_path %>
-    <p>入力した色が存在すればボックスの色が変わります</br>英語で記入してください</p>
+    <p>入力した色が存在すればボックスの色が変わります</br>履歴を押すとその色に変化します</br>英語で記入してください</p>
+    <p id="color_info"></p>
     <div id="box"></div>
     
     <div id="list_contents">
@@ -17,7 +18,7 @@
         
         <%= form_with model: @list, url: lists_path do |f| %>
             <%= f.text_area :body, id: "input_data" %>
-            <%= f.submit "送信" %>
+            <%= f.submit "保存" %>
         <% end %>
         
         
@@ -30,7 +31,7 @@
             <tbody>
                 <% @lists.each do |list| %>
                 <tr class="row-fluid">
-                    <td><p><%= list.body %></p></td><td><%= link_to "削除", list_path(list.id), method: :delete %></td>
+                    <td><p class="color_log"><%= list.body %></p></td><td><%= link_to "削除", list_path(list.id), method: :delete %></td>
                 </tr>
                 <% end %>
             </tbody>

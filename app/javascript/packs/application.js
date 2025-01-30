@@ -11,8 +11,9 @@ import "channels"
 import "jquery";
 import "popper.js";
 import "bootstrap";
-import "../stylesheets/application.scss";
 
+// scssファイル
+import "../stylesheets/application.scss";
 import "../stylesheets/homes.scss";
 import "../stylesheets/lists.scss";
 
