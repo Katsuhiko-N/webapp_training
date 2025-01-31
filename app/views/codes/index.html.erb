@@ -1,21 +1,22 @@
-<%= javascript_pack_tag 'scripts/list_index_script.js', defer: true %>
+<%= javascript_pack_tag 'scripts/codes_script.js', defer: true %>
 <!--コンテンツ部分-->
 <div id="contents">
-    <h1>実験ページ：List/index</h1>
+    <h1>実験ページ：code/index</h1>
     <%= link_to "Topに戻る", root_path %>
-    <p>入力した色が存在すればボックスの色が変わります</br>履歴を押すとその色に変化します</br>英語で記入してください</p>
+    <p>入力した色が存在すればボックスの色が変わります</br>履歴を押すとその色に変化します</br>カラーコード（#除く6桁）の16進数で記入してください</p>
+    <p id="color_info"></p>
     <div id="box"></div>
     
-    <div id="list_contents">
-        <% if @list.errors.any? %>
+    <div id="code_contents">
+        <% if @code.errors.any? %>
             <ul>
-                <% @list.errors.full_messages.each do |message| %>
+                <% @code.errors.full_messages.each do |message| %>
                     <li><%= message %></li>
                 <% end %>
             </ul>
         <% end %>
         
-        <%= form_with model: @list, url: lists_path do |f| %>
+        <%= form_with model: @code, url: codes_path do |f| %>
             <%= f.text_area :body, id: "input_data" %>
             <%= f.submit "保存" %>
         <% end %>
@@ -28,9 +29,9 @@
                 </tr>
             </thead>
             <tbody>
-                <% @lists.each do |list| %>
+                <% @codes.each do |code| %>
                 <tr class="row-fluid">
-                    <td><p class="color_log"><%= list.body %></p></td><td><%= link_to "削除", list_path(list.id), method: :delete %></td>
+                    <td><p class="color_log"><%= code.body %></p></td><td><%= link_to "削除", code_path(code.id), method: :delete %></td>
                 </tr>
                 <% end %>
             </tbody>

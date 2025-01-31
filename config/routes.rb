@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'codes/create'
+  get 'codes/index'
+  get 'codes/destroy'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.htm
   
   root to: 'homes#top'
@@ -7,5 +10,6 @@ Rails.application.routes.draw do
   get 'scroll_anime' => 'homes#scroll_anime', as: "scroll_anime"
   
   resources :lists , only:[:create, :index, :destroy]
+  resources :codes , only:[:create, :index, :destroy]
   
 end

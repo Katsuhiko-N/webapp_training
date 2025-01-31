@@ -16,6 +16,7 @@ import "bootstrap";
 import "../stylesheets/application.scss";
 import "../stylesheets/homes.scss";
 import "../stylesheets/lists.scss";
+import "../stylesheets/codes.scss";
 
 
 Rails.start()
