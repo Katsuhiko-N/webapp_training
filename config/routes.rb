@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'times/index'
   get 'codes/create'
   get 'codes/index'
   get 'codes/destroy'
@@ -11,5 +12,6 @@ Rails.application.routes.draw do
   
   resources :lists , only:[:create, :index, :destroy]
   resources :codes , only:[:create, :index, :destroy]
+  resources :times , only:[:index]
   
 end

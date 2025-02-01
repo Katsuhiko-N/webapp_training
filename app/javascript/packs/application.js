@@ -17,7 +17,7 @@ import "../stylesheets/application.scss";
 import "../stylesheets/homes.scss";
 import "../stylesheets/lists.scss";
 import "../stylesheets/codes.scss";
-
+import "../stylesheets/times.scss";
 
 Rails.start()
 Turbolinks.start()
