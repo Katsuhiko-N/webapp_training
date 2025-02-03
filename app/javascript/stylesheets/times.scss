@@ -7,9 +7,29 @@
 }
 
 #date{
-    font-size: 120px;
+    font-size: 80px;
 }
 
 #clock{
-    font-size: 100px;
+    font-size: 50px;
+}
+
+.clock{
+    width: 250px;
+    height: 250px;
+}
+
+#c_clocks{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.circle {
+    transform: rotate(-90deg);
+}
+
+.circle circle{
+    fill: none;
+    stroke-width: 15px;
+    stroke-dashoffset: 0;
 }
