@@ -68,6 +68,6 @@ const second_circle = () => {
 };
 
 
-setInterval(hour_circle, 60000);
+setInterval(hour_circle, 1000);
 setInterval(minute_circle, 1000);
 setInterval(second_circle, 1000);
