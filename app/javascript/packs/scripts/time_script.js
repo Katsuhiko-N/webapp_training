@@ -33,11 +33,11 @@ setInterval(getTime, 1000);
 
 
 
-// ここから時計グラフ
-const c_hours = document.querySelector('#hours');
-const c_minutes = document.querySelector('#minutes');
-const c_seconds = document.querySelector('#seconds');
 
+// ここからサークル時計
+const c_hours = document.querySelector('#c_hours');
+const c_minutes = document.querySelector('#c_minutes');
+const c_seconds = document.querySelector('#c_seconds');
 
 // 円の色
 c_hours.style.stroke = "dodgerblue";
@@ -67,7 +67,48 @@ const second_circle = () => {
     c_seconds.style.strokeDasharray = `${seconds_area}, 220`;
 };
 
-
 setInterval(hour_circle, 1000);
 setInterval(minute_circle, 1000);
 setInterval(second_circle, 1000);
+
+
+
+
+
+// ここからアナログ時計
+
+// const a_hours = document.querySelector('#a_hours');
+// const a_minutes = document.querySelector('#a_minutes');
+const a_seconds = document.querySelector('#a_seconds');
+
+// 円の色
+// a_hours.style.stroke = "dodgerblue";
+// a_minutes.style.stroke = "springgreen";
+a_seconds.style.stroke = "#ff7b00";
+
+
+// strokeDashoffsetを時刻によって変化（一周３６０度）
+// const hour_analogue = () => {
+//     let nowTimes = new Date();
+//     let nowHours = layout(nowTimes.getHours());
+//     let hours_area = 360 * (nowHours / 24);
+//     a_hours.style.strokeDashoffset = `${hours_area}deg`;
+// };
+
+// const minute_analogue = () => {
+//     let nowTimes = new Date();
+//     let nowMinutes = layout(nowTimes.getMinutes());
+//     let minutes_area = 360 * (nowMinutes / 60);
+//     a_minutes.style.strokeDasharray = `${minutes_area}deg`;
+// };
+
+const second_analogue = () => {
+    let nowTimes = new Date();
+    let nowSeconds = layout(nowTimes.getSeconds());
+    let seconds_area = 360 * (nowSeconds / 60);
+    a_seconds.style.strokeDasharray = `${seconds_area}deg`;
+};
+
+// setInterval(hour_analogue, 1000);
+// setInterval(minute_analogue, 1000);
+setInterval(second_analogue, 1000);

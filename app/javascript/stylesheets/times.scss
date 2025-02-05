@@ -24,7 +24,7 @@
     justify-content: space-evenly;
 }
 
-.circle {
+.circle, .analogue {
     transform: rotate(-90deg);
 }
 
@@ -36,4 +36,24 @@
 
 .info{
     font-size: 40px;
+}
+
+
+// アナログ時計
+
+.analogue circle{
+    fill: none;
+    stroke-width: 15px;
+}
+
+#a_hours{
+    stroke-dasharray: 5, 94;
+}
+
+#a_minutes{
+    stroke-dasharray: 8, 157;
+}
+
+#a_seconds{
+    stroke-dasharray: 11, 220;
 }

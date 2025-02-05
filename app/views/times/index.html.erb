@@ -12,27 +12,39 @@
     
     <div id="c_clocks">
         <!--円（時）-->
-        <div id="c_hour" class="clock">
+        <div class="clock">
             <svg class="circle" viewBox="0 0 100 100">
-                <circle id="hours" cx="50%" cy="50%" r="35"></circle>
+                <circle id="c_hours" class="" cx="50%" cy="50%" r="35"></circle>
             </svg>
             <p class="info">hour</p>
         </div>
         
         <!--円（分）-->
-        <div id="c_minutes" class="clock">
+        <div class="clock">
             <svg class="circle" viewBox="0 0 100 100">
-                <circle id="minutes" cx="50%" cy="50%" r="35"></circle>
+                <circle id="c_minutes" cx="50%" cy="50%" r="35"></circle>
             </svg>
             <p class="info">minute</p>
         </div>
         
         <!--円（秒）-->
-        <div id="c_seconds" class="clock">
+        <div class="clock">
             <svg class="circle" viewBox="0 0 100 100">
-                <circle id="seconds" cx="50%" cy="50%" r="35"></circle>
+                <circle id="c_seconds" cx="50%" cy="50%" r="35"></circle>
             </svg>
             <p class="info">second</p>
+        </div>
+    </div>
+    
+    <div id="analogue_clocks">
+        <!--アナログ-->
+        <div id="analogue_hour" class="clock">
+            <svg class="analogue" viewBox="0 0 100 100">
+                <!--<circle id="a_hours" cx="50%" cy="50%" r="15"></circle>-->
+                <!--<circle id="a_minutes" cx="50%" cy="50%" r="25"></circle>-->
+                <circle id="a_seconds" cx="50%" cy="50%" r="35"></circle>
+            </svg>
+            <p class="info">Analogue</p>
         </div>
     </div>
     
