@@ -41,19 +41,21 @@
 
 // アナログ時計
 
-.analogue circle{
-    fill: none;
-    stroke-width: 15px;
+#analogue_hour div{
+    transform-origin: center 100%;
 }
 
 #a_hours{
-    stroke-dasharray: 5, 94;
+    width: 8%;
+    height: 40%;
 }
 
 #a_minutes{
-    stroke-dasharray: 8, 157;
+    width: 5%;
+    height: 90%;
 }
 
 #a_seconds{
-    stroke-dasharray: 11, 220;
+    width: 3%;
+    height: 90%;
 }

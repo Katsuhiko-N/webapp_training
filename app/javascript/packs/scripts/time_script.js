@@ -81,32 +81,32 @@ const a_hours = document.querySelector('#a_hours');
 const a_minutes = document.querySelector('#a_minutes');
 const a_seconds = document.querySelector('#a_seconds');
 
-// 円の色
-a_hours.style.stroke = "dodgerblue";
-a_minutes.style.stroke = "springgreen";
-a_seconds.style.stroke = "#ff7b00";
+// 針の色
+a_hours.style.backgroundColor = "dodgerblue";
+a_minutes.style.backgroundColor = "springgreen";
+a_seconds.style.backgroundColor = "#ff7b00";
 
 
-// strokeDashoffset（手前にずれる）を時刻によって変化（一周＝演習）
+// rotateを時刻によって変化（一周）
 const hour_analogue = () => {
     let nowTimes = new Date();
     let nowHours = layout(nowTimes.getHours());
-    let hours_area = 94 - 94 * (nowHours / 24);
-    a_hours.style.strokeDashoffset = `${hours_area}`;
+    let hours_area = 360 * (nowHours / 24);
+    a_hours.style.transform = `rotate(${hours_area}deg)`;
 };
 
 const minute_analogue = () => {
     let nowTimes = new Date();
     let nowMinutes = layout(nowTimes.getMinutes());
-    let minutes_area = 157 - 157 * (nowMinutes / 60);
-    a_minutes.style.strokeDashoffset = `${minutes_area}`;
+    let minutes_area = 360 * (nowMinutes / 60);
+    a_minutes.style.transform = `rotate(${minutes_area}deg)`;
 };
 
 const second_analogue = () => {
     let nowTimes = new Date();
     let nowSeconds = layout(nowTimes.getSeconds());
-    let seconds_area = 220 - 220 * (nowSeconds / 60);
-    a_seconds.style.strokeDashoffset = `${seconds_area}`;
+    let seconds_area = 360 * (nowSeconds / 60);
+    a_seconds.style.transform = `rotate(${seconds_area}deg)`;
 };
 
 setInterval(hour_analogue, 1000);
