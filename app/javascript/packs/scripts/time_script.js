@@ -77,38 +77,38 @@ setInterval(second_circle, 1000);
 
 // ここからアナログ時計
 
-// const a_hours = document.querySelector('#a_hours');
-// const a_minutes = document.querySelector('#a_minutes');
+const a_hours = document.querySelector('#a_hours');
+const a_minutes = document.querySelector('#a_minutes');
 const a_seconds = document.querySelector('#a_seconds');
 
 // 円の色
-// a_hours.style.stroke = "dodgerblue";
-// a_minutes.style.stroke = "springgreen";
+a_hours.style.stroke = "dodgerblue";
+a_minutes.style.stroke = "springgreen";
 a_seconds.style.stroke = "#ff7b00";
 
 
-// strokeDashoffsetを時刻によって変化（一周３６０度）
-// const hour_analogue = () => {
-//     let nowTimes = new Date();
-//     let nowHours = layout(nowTimes.getHours());
-//     let hours_area = 360 * (nowHours / 24);
-//     a_hours.style.strokeDashoffset = `${hours_area}deg`;
-// };
+// strokeDashoffset（手前にずれる）を時刻によって変化（一周＝演習）
+const hour_analogue = () => {
+    let nowTimes = new Date();
+    let nowHours = layout(nowTimes.getHours());
+    let hours_area = 94 - 94 * (nowHours / 24);
+    a_hours.style.strokeDashoffset = `${hours_area}`;
+};
 
-// const minute_analogue = () => {
-//     let nowTimes = new Date();
-//     let nowMinutes = layout(nowTimes.getMinutes());
-//     let minutes_area = 360 * (nowMinutes / 60);
-//     a_minutes.style.strokeDasharray = `${minutes_area}deg`;
-// };
+const minute_analogue = () => {
+    let nowTimes = new Date();
+    let nowMinutes = layout(nowTimes.getMinutes());
+    let minutes_area = 157 - 157 * (nowMinutes / 60);
+    a_minutes.style.strokeDashoffset = `${minutes_area}`;
+};
 
 const second_analogue = () => {
     let nowTimes = new Date();
     let nowSeconds = layout(nowTimes.getSeconds());
-    let seconds_area = 360 * (nowSeconds / 60);
-    a_seconds.style.strokeDasharray = `${seconds_area}deg`;
+    let seconds_area = 220 - 220 * (nowSeconds / 60);
+    a_seconds.style.strokeDashoffset = `${seconds_area}`;
 };
 
-// setInterval(hour_analogue, 1000);
-// setInterval(minute_analogue, 1000);
+setInterval(hour_analogue, 1000);
+setInterval(minute_analogue, 1000);
 setInterval(second_analogue, 1000);
