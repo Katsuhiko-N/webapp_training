@@ -22,6 +22,7 @@
 #c_clocks{
     display: flex;
     justify-content: space-evenly;
+    height: 300px;
 }
 
 .circle, .analogue {
@@ -39,23 +40,41 @@
 }
 
 
+
+
 // アナログ時計
+#analogue_clocks{
+    margin: 0 auto;
+}
+
+#analogue_hour{
+    width: 50%;
+    height: 50%;
+    position: relative;
+    // 辺が基準だから半分の半分
+    // 中身（子要素）の針を中心で考える
+    top: 25%;
+    left: 25%;
+}
 
 #analogue_hour div{
-    transform-origin: center 100%;
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform-origin: bottom center;
 }
 
 #a_hours{
     width: 8%;
-    height: 40%;
+    height: 60%;
 }
 
 #a_minutes{
     width: 5%;
-    height: 90%;
+    height: 85%;
 }
 
 #a_seconds{
     width: 3%;
-    height: 90%;
+    height: 85%;
 }
