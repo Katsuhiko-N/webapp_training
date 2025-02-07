@@ -81,12 +81,20 @@
 
 
 // 以下experimentsページ
-#area{
-    border-bottom: solid 2px black;
+#size_input{
+    display: block;
+    margin: 10px auto;
 }
 
-#ball{
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+#area{
+    width: 80%;
+    height: 200px;
+    border: solid 2px black;
+    margin: 0 auto;
+    // 子要素を枠内で表示
+    overflow: hidden;
+}
+
+#signage{
+    color: green;
 }
