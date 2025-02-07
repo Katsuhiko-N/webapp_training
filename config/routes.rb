@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   
   resources :lists , only:[:create, :index, :destroy]
   resources :codes , only:[:create, :index, :destroy]
-  resources :times , only:[:index]
+  resources :times , only:[:index] do
+    member do
+      get 'experiments'
+    end
+  end
   
 end
