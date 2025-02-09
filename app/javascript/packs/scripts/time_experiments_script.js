@@ -34,7 +34,9 @@ setInterval(getTime, 1000);
 const start_btn = document.querySelector('#start_btn');
 const area = document.querySelector('#area');
 const signage = document.querySelector('#signage');
+const color_input = document.querySelector('#color_input');
 const size_input = document.querySelector('#size_input');
+const duration_input = document.querySelector('#duration_input');
 
 start_btn.addEventListener('click', () => {
     signage.style.fontSize = `${size_input.value}px`;
@@ -42,14 +44,18 @@ start_btn.addEventListener('click', () => {
     let area_width = area_css.getPropertyValue("width");
     // 単位を削除
     let width = Number( area_width.replace(/px/g , '') );
-    console.log(width);
+    
+    signage.style.color = `${color_input.value}`;
     
     const keyframe1 = {
         translate: [`${width}px 0`, `-${width}px 0`]
     };
     
+    console.log(duration_input.value);
+    // 整数型に変換してから
+    let duration_time = parseInt(duration_input.value);
     const option1 = {
-        duration: 5000,
+        duration: duration_time,
         iterations: Infinity,
     };
     

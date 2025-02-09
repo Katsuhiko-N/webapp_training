@@ -81,7 +81,7 @@
 
 
 // 以下experimentsページ
-#size_input{
+.form{
     display: block;
     margin: 10px auto;
 }
@@ -93,8 +93,4 @@
     margin: 0 auto;
     // 子要素を枠内で表示
     overflow: hidden;
-}
-
-#signage{
-    color: green;
 }
