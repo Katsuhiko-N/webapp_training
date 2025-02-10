@@ -38,13 +38,10 @@ const color_input = document.querySelector('#color_input');
 const size_input = document.querySelector('#size_input');
 const duration_input = document.querySelector('#duration_input');
 
-let c_length = color_input.value.length;
-let s_length = size_input.value.length;
-let d_length = duration_input.value.length;
 
 // スタートボタン無効化関数
 const disable = () => {
-    if(color_input.value.length == 0){
+    if(color_input.value.length == 0 || size_input.value.length == 0 || duration_input.value.length == 0){
         start_btn.classList.add('r_border');
         start_btn.disabled = true;
     }else{
