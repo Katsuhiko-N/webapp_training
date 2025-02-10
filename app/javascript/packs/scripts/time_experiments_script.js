@@ -38,6 +38,49 @@ const color_input = document.querySelector('#color_input');
 const size_input = document.querySelector('#size_input');
 const duration_input = document.querySelector('#duration_input');
 
+let c_length = color_input.value.length;
+let s_length = size_input.value.length;
+let d_length = duration_input.value.length;
+
+// スタートボタン無効化関数
+const disable = () => {
+    if(color_input.value.length == 0){
+        start_btn.classList.add('r_border');
+        start_btn.disabled = true;
+    }else{
+        start_btn.classList.remove('r_border');
+        start_btn.disabled = false;
+    }
+};
+
+color_input.addEventListener('keyup', () => {
+    if(color_input.value.length == 0){
+        color_input.classList.add('r_border');
+    }else{
+        color_input.classList.remove('r_border');
+    }
+    disable();
+});
+
+size_input.addEventListener('keyup', () => {
+    if(size_input.value.length == 0){
+        size_input.classList.add('r_border');
+    }else{
+        size_input.classList.remove('r_border');
+    }
+    disable();
+});
+
+duration_input.addEventListener('keyup', () => {
+    if(duration_input.value.length == 0){
+        duration_input.classList.add('r_border');
+    }else{
+        duration_input.classList.remove('r_border');
+    }
+    disable();
+});
+
+
 start_btn.addEventListener('click', () => {
     signage.style.fontSize = `${size_input.value}px`;
     let area_css = getComputedStyle(area, '');
@@ -48,7 +91,7 @@ start_btn.addEventListener('click', () => {
     signage.style.color = `${color_input.value}`;
     
     const keyframe1 = {
-        translate: [`${width}px 0`, `-${width}px 0`]
+        translate: [`${width * 0.9}px 0`, `-${width * 0.9}px 0`]
     };
     
     console.log(duration_input.value);
