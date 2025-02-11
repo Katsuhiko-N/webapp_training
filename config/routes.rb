@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :times , only:[:index] do
     collection do
       get 'experiments'
+      get 'stopwatch'
     end
   end
   

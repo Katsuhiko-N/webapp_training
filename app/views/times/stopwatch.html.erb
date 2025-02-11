@@ -1,0 +1,36 @@
+<%= javascript_pack_tag 'scripts/stopwatch_script.js', defer: true %>
+<!--コンテンツ部分-->
+<div id="contents">
+    <h1>実験ページ：Time/stopwatchs</h1>
+    <%= link_to "Topに戻る", root_path %>
+    <h2>現在日時</h2>
+    <p id="date"></p>
+    
+    
+    <h2>現在時刻</h2>
+    <p id="clock"></p>
+    
+    <button id="start_btn" class="btn r_border" disabled>Start</button>
+    <div>
+        <div class="form">
+            <input type="text" id="color_input" class="r_border" placeholder="値を入力">
+            <p>カラーコード（またはcssでの色の名前）を入力</p>
+        </div>
+        <div class="form">
+            <input type="text" id="size_input" class="r_border" placeholder="値を入力">
+            <p>文字の大きさを入力</p>
+        </div>
+        <div class="form">
+            <input type="text" id="duration_input" class="r_border" placeholder="値を入力">
+            <p>スピード（ミリ秒）を入力</p>
+        </div>
+    </div>
+    
+    
+    <div id='area'>
+        <p id="stopwatch"></p>
+        <button id="st/sp_btn">スタート・ストップ</button>
+    </div>
+    
+    
+</div>

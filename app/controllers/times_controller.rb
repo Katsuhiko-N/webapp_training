@@ -5,4 +5,7 @@ class TimesController < ApplicationController
   def experiments
   end
   
+  def stopwatch
+  end
+  
 end
