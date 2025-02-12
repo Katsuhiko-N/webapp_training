@@ -32,7 +32,6 @@ setInterval(getTime, 1000);
 
 
 // ストップウォッチ機能
-
 const show_time = document.querySelector('#show_time');
 const s_btn = document.querySelector('#s_btn');
 const r_btn = document.querySelector('#r_btn');
@@ -61,7 +60,7 @@ s_btn.addEventListener('click',() => {
         start_stop = 0;
         r_btn.disabled = false;
         // カウントストップ
-        clearInterval(count);
+        clearTimeout(count);
         // 現在時から開始時を引く
         hold_time += Date.now() - start_time;
     }
@@ -69,7 +68,7 @@ s_btn.addEventListener('click',() => {
 
 r_btn.addEventListener('click', () => {
     // カウントストップ
-    clearInterval(count);
+    clearTimeout(count);
     // 初期化
     elapsed_time = 0;
     hold_time = 0;
@@ -93,6 +92,65 @@ let timer = () => {
 
 
 // タイマー
-const timer2 = document.querySelector('timer2');
+const show_time2 = document.querySelector('#show_time2');
+const timer2 = document.querySelector('#timer2');
+const set_btn = document.querySelector('#set_btn');
 const s_btn2 = document.querySelector('#s_btn2');
 const r_btn2 = document.querySelector('#r_btn2');
+
+// 経過時間
+let elapsed_time2 = 0;
+let count2;
+// スタート・ストップ切り替え
+let start_stop2 = 0;
+
+timer2.addEventListener('keyup', () => {
+    if(timer2.value > 600){
+        timer2.value = 600;
+    }else if(timer2.value < 0){
+        timer2.value = 0;
+    }
+});
+
+
+set_btn.addEventListener('click', () => {
+    // 開始時間記録
+    elapsed_time2 = timer2.value;
+    show_time2.textContent = timer2.value;
+});
+
+s_btn2.addEventListener('click',() => {
+    if(start_stop2 == 0){
+        start_stop2 = 1;
+        set_btn.disabled = true;
+        r_btn2.disabled = true;
+        // カウント開始
+        countdown();
+    }else{
+        start_stop2 = 0;
+        set_btn.disabled = false;
+        r_btn2.disabled = false;
+        // カウントストップ
+        clearTimeout(count2);
+    }
+});
+
+r_btn2.addEventListener('click', () => {
+    set_btn.disabled = false;
+    // カウントストップ
+    clearTimeout(count2);
+    // 初期化
+    show_time2.textContent = timer2.value;
+});
+
+
+let countdown = () => {
+    count2 = setInterval(() => {
+        if(elapsed_time2 > 0){
+            // 経過時間から秒を引く
+            elapsed_time2 = (elapsed_time2) - 1;
+            show_time2.textContent = elapsed_time2;
+        }
+    },1000);
+};
+
