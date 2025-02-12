@@ -89,3 +89,10 @@ let timer = () => {
         timer();
     },10);
 };
+
+
+
+// タイマー
+const timer2 = document.querySelector('timer2');
+const s_btn2 = document.querySelector('#s_btn2');
+const r_btn2 = document.querySelector('#r_btn2');
