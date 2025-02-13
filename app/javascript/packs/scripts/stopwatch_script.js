@@ -92,31 +92,63 @@ let timer = () => {
 
 
 // タイマー
-const show_time2 = document.querySelector('#show_time2');
-const timer2 = document.querySelector('#timer2');
+const i_minutes = document.querySelector('#i_minutes');
+const i_seconds = document.querySelector('#i_seconds');
+
+const t_minutes = document.querySelector('#t_minutes');
+const t_seconds = document.querySelector('#t_seconds');
+
 const set_btn = document.querySelector('#set_btn');
 const s_btn2 = document.querySelector('#s_btn2');
 const r_btn2 = document.querySelector('#r_btn2');
 
+const t_info = document.querySelector('#t_info');
+
 // 経過時間
-let elapsed_time2 = 0;
+let elapsed_time_m = 0;
+let elapsed_time_s = 0;
 let count2;
 // スタート・ストップ切り替え
 let start_stop2 = 0;
 
-timer2.addEventListener('keyup', () => {
-    if(timer2.value > 600){
-        timer2.value = 600;
-    }else if(timer2.value < 0){
-        timer2.value = 0;
+
+i_minutes.addEventListener('keyup', () => {
+    if(i_minutes.value > 59){
+        i_minutes.value = 59;
+    }else if(i_minutes.value < 0){
+        i_minutes.value = 0;
+    }
+});
+
+i_seconds.addEventListener('keyup', () => {
+    if(i_seconds.value > 59){
+        i_seconds.value = 59;
+    }else if(i_seconds.value < 0){
+        i_seconds.value = 0;
     }
 });
 
 
 set_btn.addEventListener('click', () => {
+    // 初期化
+    t_info.textContent = "";
+    
     // 開始時間記録
-    elapsed_time2 = timer2.value;
-    show_time2.textContent = timer2.value;
+    elapsed_time_m = i_minutes.value;
+    elapsed_time_s = i_seconds.value;
+    // 分の設定
+    if(i_seconds.value > 9){
+        t_seconds.textContent = i_seconds.value;
+    }else{
+        t_seconds.textContent = `0${i_seconds.value}`;
+    }
+    // 秒の設定
+    if(i_minutes.value > 9){
+        t_minutes.textContent = i_minutes.value;
+    }else{
+        t_minutes.textContent = `0${i_minutes.value}`;
+    }
+    
 });
 
 s_btn2.addEventListener('click',() => {
@@ -140,16 +172,55 @@ r_btn2.addEventListener('click', () => {
     // カウントストップ
     clearTimeout(count2);
     // 初期化
-    show_time2.textContent = timer2.value;
+    t_info.textContent = "";
+    // 分の設定
+    if(i_seconds.value > 9){
+        t_seconds.textContent = i_seconds.value;
+    }else{
+        t_seconds.textContent = `0${i_seconds.value}`;
+    }
+    // 秒の設定
+    if(i_minutes.value > 9){
+        t_minutes.textContent = i_minutes.value;
+    }else{
+        t_minutes.textContent = `0${i_minutes.value}`;
+    }
 });
 
 
 let countdown = () => {
     count2 = setInterval(() => {
-        if(elapsed_time2 > 0){
+        if(elapsed_time_s > 0){
             // 経過時間から秒を引く
-            elapsed_time2 = (elapsed_time2) - 1;
-            show_time2.textContent = elapsed_time2;
+            elapsed_time_s = (elapsed_time_s) - 1;
+            if(elapsed_time_s > 9){
+                t_seconds.textContent = elapsed_time_s;
+            }else{
+                t_seconds.textContent = `0${elapsed_time_s}`;
+            }
+        }else if(elapsed_time_s == 0){
+            if(elapsed_time_m == 0){
+                // 残り時間０の時
+                t_minutes.textContent = `0${elapsed_time_m}`;
+                t_seconds.textContent = `0${elapsed_time_s}`;
+                
+                start_stop2 = 0;
+                set_btn.disabled = false;
+                r_btn2.disabled = false;
+                // カウントストップ
+                clearTimeout(count2);
+                t_info.textContent = "時間になりました";
+            }else{
+                // 分が残っているなら１引く
+                elapsed_time_m = (elapsed_time_m) - 1;
+                if(elapsed_time_m > 9){
+                    t_minutes.textContent = elapsed_time_m;
+                }else{
+                    t_minutes.textContent = `0${elapsed_time_m}`;
+                }
+                elapsed_time_s = 59;
+                t_seconds.textContent = "59";
+            }
         }
     },1000);
 };

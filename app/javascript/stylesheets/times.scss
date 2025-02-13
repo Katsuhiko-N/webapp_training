@@ -99,7 +99,32 @@
     border: solid 4px red;
 }
 
+
 // ストップウォッチ
+#s_w{
+    margin-bottom: 30px;
+}
+
 #show_time{
     font-size: 60px;
+}
+
+#t_input{
+    display: flex;
+    justify-content: center;
+}
+
+#t_display{
+    display: flex;
+    justify-content: center;
+}
+
+
+// タイマー
+#tm{
+    margin-bottom: 30px;
+}
+
+#t_info{
+    font-size: 40px;
 }

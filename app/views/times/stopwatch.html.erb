@@ -10,7 +10,7 @@
     <h2>現在時刻</h2>
     <p id="clock"></p>
     
-    <div>
+    <div id="s_w">
         <h2>ストップウォッチ</h2>
         <p id="show_time">00:00.000</p>
         <button id="s_btn">スタート・ストップ</button>
@@ -18,11 +18,19 @@
     </div>
     
     
-    <div>
-        <h2>タイマー（秒：600まで）</h2>
+    <div id="tm">
+        <h2>タイマー</h2>
         <!--stepは最小単位、valueは初期値-->
-        <input type="number" id="timer2" max="600" min="0" step="1" value="0">
-        <p id="show_time2">0</p>
+        <div id="t_input">
+            <input type="number" id="i_minutes" max="59" min="0" step="1" value="00">
+            <p>:</p>
+            <input type="number" id="i_seconds" max="59" min="0" step="1" value="00">
+        </div>
+        
+        <div id="t_display">
+            <p id="t_minutes">00</p><p>:</p><p id="t_seconds">00</p>
+        </div>
+        <p id="t_info"></p>
         <button id="set_btn">セット</button>
         <button id="s_btn2">スタート・ストップ</button>
         <button id="r_btn2" disabled>リセット</button>
