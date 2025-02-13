@@ -148,7 +148,6 @@ set_btn.addEventListener('click', () => {
     }else{
         t_minutes.textContent = `0${i_minutes.value}`;
     }
-    
 });
 
 s_btn2.addEventListener('click',() => {
