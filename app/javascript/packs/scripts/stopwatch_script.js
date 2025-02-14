@@ -130,23 +130,25 @@ i_seconds.addEventListener('keyup', () => {
 
 
 set_btn.addEventListener('click', () => {
-    // 初期化
-    t_info.textContent = "";
-    
-    // 開始時間記録
-    elapsed_time_m = i_minutes.value;
-    elapsed_time_s = i_seconds.value;
-    // 分の設定
-    if(i_seconds.value > 9){
-        t_seconds.textContent = i_seconds.value;
-    }else{
-        t_seconds.textContent = `0${i_seconds.value}`;
-    }
-    // 秒の設定
-    if(i_minutes.value > 9){
-        t_minutes.textContent = i_minutes.value;
-    }else{
-        t_minutes.textContent = `0${i_minutes.value}`;
+    if(i_minutes.value <= 59 && i_minutes.value >= 0 && i_seconds.value <= 59 && i_seconds.value >= 0){
+        // 初期化
+        t_info.textContent = "";
+        
+        // 開始時間記録
+        elapsed_time_m = i_minutes.value;
+        elapsed_time_s = i_seconds.value;
+        // 分の設定
+        if(i_seconds.value > 9){
+            t_seconds.textContent = i_seconds.value;
+        }else{
+            t_seconds.textContent = `0${i_seconds.value}`;
+        }
+        // 秒の設定
+        if(i_minutes.value > 9){
+            t_minutes.textContent = i_minutes.value;
+        }else{
+            t_minutes.textContent = `0${i_minutes.value}`;
+        }
     }
 });
 
