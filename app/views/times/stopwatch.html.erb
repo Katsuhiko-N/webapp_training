@@ -12,7 +12,7 @@
     
     <div id="s_w">
         <h2>ストップウォッチ</h2>
-        <p id="show_time">00:00.000</p>
+        <p id="show_time" class="display">00:00.000</p>
         <button id="s_btn">スタート・ストップ</button>
         <button id="r_btn" disabled>リセット</button>
     </div>
@@ -22,13 +22,13 @@
         <h2>タイマー</h2>
         <!--stepは最小単位、valueは初期値-->
         <div id="t_input">
-            <input type="number" id="i_minutes" max="59" min="0" step="1" value="00">
-            <p>:</p>
-            <input type="number" id="i_seconds" max="59" min="0" step="1" value="00">
+            <input type="number" id="i_minutes" max="59" min="0" step="1" value="00" class="display">
+            <p class="display">:</p>
+            <input type="number" id="i_seconds" max="59" min="0" step="1" value="00" class="display">
         </div>
         
         <div id="t_display">
-            <p id="t_minutes">00</p><p>:</p><p id="t_seconds">00</p>
+            <p id="t_minutes" class="display">00</p><p class="display">:</p><p id="t_seconds" class="display">00</p>
         </div>
         <p id="t_info"></p>
         <button id="set_btn">セット</button>
