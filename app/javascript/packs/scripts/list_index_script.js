@@ -9,7 +9,7 @@ input_data.addEventListener('keyup', () => {
 });
 
 
-// 同じclassを持つ者すべてに適用するには、配列にし、一個一個に適用する
+// 同じclassを持つ者すべてに適用するには、配列として取得し、一個一個に適用する
 const color_logs = document.querySelectorAll('.color_log');
 
 for(let i = 0; i < color_logs.length; i++){

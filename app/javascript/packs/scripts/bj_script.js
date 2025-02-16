@@ -124,7 +124,14 @@ const game = () => {
             lose();
         }else if(pc_total == 21){
             p_select.classList.add('hide');
-            while(dc_total < 16){
+            if(dc_total < 16){
+                do{
+                    dc = draw(dc_total);
+                    d_card.textContent = d_card.textContent + ' ' + `${dc}`;
+                    dc_total = dc_total + dc;
+                    d_info.textContent = '合計は ' + `${dc_total}` + ' です';
+                }while(dc_total < 21);
+            }else{
                 dc = draw(dc_total);
                 d_card.textContent = d_card.textContent + ' ' + `${dc}`;
                 dc_total = dc_total + dc;
@@ -137,13 +144,19 @@ const game = () => {
     // 今のカードで勝負（チェック）
     btn_ck.addEventListener('click',() => {
         p_select.classList.add('hide');
-        do{
+        if(dc_total < 16){
+            do{
+                dc = draw(dc_total);
+                d_card.textContent = d_card.textContent + ' ' + `${dc}`;
+                dc_total = dc_total + dc;
+                d_info.textContent = '合計は ' + `${dc_total}` + ' です';
+            }while(dc_total < pc_total);
+        }else{
             dc = draw(dc_total);
             d_card.textContent = d_card.textContent + ' ' + `${dc}`;
             dc_total = dc_total + dc;
             d_info.textContent = '合計は ' + `${dc_total}` + ' です';
-        }while(dc_total < 16);
-        
+        }
         battle(pc_total,dc_total);
     });
     
