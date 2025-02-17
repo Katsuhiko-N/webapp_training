@@ -42,13 +42,16 @@ const duration_input = document.querySelector('#duration_input');
 // スタートボタン無効化関数
 const disable = () => {
     if(color_input.value.length == 0 || size_input.value.length == 0 || duration_input.value.length == 0){
+        start_btn.classList.remove('btn');
         start_btn.classList.add('r_border');
         start_btn.disabled = true;
     }else{
         start_btn.classList.remove('r_border');
+        start_btn.classList.add('btn');
         start_btn.disabled = false;
     }
 };
+
 
 color_input.addEventListener('keyup', () => {
     if(color_input.value.length == 0){
