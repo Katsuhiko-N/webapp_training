@@ -111,6 +111,9 @@ let count2;
 // スタート・ストップ切り替え
 let start_stop2 = 0;
 
+// 設定値
+let set_minutes = 0;
+let set_seconds = 0;
 
 i_minutes.addEventListener('keyup', () => {
     if(i_minutes.value > 59){
@@ -135,19 +138,22 @@ set_btn.addEventListener('click', () => {
         t_info.textContent = "";
         
         // 開始時間記録
-        elapsed_time_m = i_minutes.value;
-        elapsed_time_s = i_seconds.value;
+        set_minutes = i_minutes.value;
+        elapsed_time_m = set_minutes;
+        
+        set_seconds = i_seconds.value;
+        elapsed_time_s = set_seconds;
         // 分の設定
-        if(i_seconds.value > 9){
-            t_seconds.textContent = i_seconds.value;
+        if(set_seconds > 9){
+            t_seconds.textContent = set_seconds;
         }else{
-            t_seconds.textContent = `0${i_seconds.value}`;
+            t_seconds.textContent = `0${set_seconds}`;
         }
         // 秒の設定
-        if(i_minutes.value > 9){
-            t_minutes.textContent = i_minutes.value;
+        if(set_minutes > 9){
+            t_minutes.textContent = set_minutes;
         }else{
-            t_minutes.textContent = `0${i_minutes.value}`;
+            t_minutes.textContent = `0${set_minutes}`;
         }
     }
 });
@@ -170,21 +176,19 @@ s_btn2.addEventListener('click',() => {
 
 r_btn2.addEventListener('click', () => {
     set_btn.disabled = false;
-    // カウントストップ
-    clearTimeout(count2);
     // 初期化
     t_info.textContent = "";
     // 分の設定
-    if(i_seconds.value > 9){
-        t_seconds.textContent = i_seconds.value;
+    if(set_seconds > 9){
+        t_seconds.textContent = set_seconds;
     }else{
-        t_seconds.textContent = `0${i_seconds.value}`;
+        t_seconds.textContent = `0${set_seconds}`;
     }
     // 秒の設定
-    if(i_minutes.value > 9){
-        t_minutes.textContent = i_minutes.value;
+    if(set_minutes > 9){
+        t_minutes.textContent = set_minutes;
     }else{
-        t_minutes.textContent = `0${i_minutes.value}`;
+        t_minutes.textContent = `0${set_minutes}`;
     }
 });
 
