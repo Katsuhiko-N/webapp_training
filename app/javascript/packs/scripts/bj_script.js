@@ -93,11 +93,13 @@ const game = () => {
         d_info.textContent = '合計は ' + `${dc_total}` + ' です';
     }
     
-    // プレイヤーの最初の1枚
-    pc = draw(pc_total);
-    p_card.textContent = p_card.textContent + ' ' + `${pc}`;
-    pc_total = pc;
-    p_info.textContent = '合計は ' + `${pc_total}` + ' です';
+    // プレイヤーの最初の2枚
+    for(let i = 0; i < 2; i++){
+        pc = draw(pc_total);
+        p_card.textContent = p_card.textContent + ' ' + `${pc}`;
+        pc_total = pc_total + pc;
+        p_info.textContent = '合計は ' + `${pc_total}` + ' です';
+    }
     
     // もしディーラーがブラックジャックなら
     if(dc_total == 21){
@@ -182,11 +184,13 @@ const game = () => {
             dc_total = dc_total + dc;
             d_info.textContent = '合計は ' + `${dc_total}` + ' です';
         }
-        // プレイヤーの最初の1枚
+        // プレイヤーの最初の2枚
+        for(let i = 0; i < 2; i++){
         pc = draw(pc_total);
         p_card.textContent = p_card.textContent + ' ' + `${pc}`;
-        pc_total = pc;
+        pc_total = pc_total + pc;
         p_info.textContent = '合計は ' + `${pc_total}` + ' です';
+    }
     });
 };
 
