@@ -28,6 +28,8 @@ const getDay = () => {
     date.textContent = `${nowYears}年${nowMonthes}月${nowDates}日`;
 };
 
+getDay();
+getTime();
 setInterval(getDay, 1000);
 setInterval(getTime, 1000);
 
@@ -66,6 +68,10 @@ const second_circle = () => {
     let seconds_area = 220 * (nowSeconds / 60);
     c_seconds.style.strokeDasharray = `${seconds_area}, 220`;
 };
+
+hour_circle();
+minute_circle();
+second_circle();
 
 setInterval(hour_circle, 1000);
 setInterval(minute_circle, 1000);
@@ -108,6 +114,10 @@ const second_analogue = () => {
     let seconds_area = 360 * (nowSeconds / 60);
     a_seconds.style.transform = `rotate(${seconds_area}deg)`;
 };
+
+hour_analogue();
+minute_analogue();
+second_analogue();
 
 setInterval(hour_analogue, 1000);
 setInterval(minute_analogue, 1000);
